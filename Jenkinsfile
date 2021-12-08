@@ -8,6 +8,7 @@ pipeline {
                 sh '''
                     echo "PATH = ${PATH}"
                     echo "GRADLE_HOME = ${GRADLE_HOME}"
+                    echo "radhey radhey"
                 '''
             }
         }
