@@ -7,7 +7,7 @@ pipeline {
             steps {
                 sh '''
                 
-             ssh -i ec2-user@18.136.194.224
+             ssh -i ec2-user@18.136.194.224:22
                    // echo "PATH = ${PATH}"
                   //  echo "GRADLE_HOME = ${GRADLE_HOME}"
                  //   echo "radhey radhey"
