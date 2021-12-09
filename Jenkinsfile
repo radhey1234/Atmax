@@ -7,7 +7,7 @@ pipeline {
             steps {
                 sh '''
                 
-scp -o StrictHostKeyChecking=no "radhey" ec2-user@18.136.194.224:/home/ec2-user/
+             ssh -i ec2-user@ec2-18-136-194-224:22
                    // echo "PATH = ${PATH}"
                   //  echo "GRADLE_HOME = ${GRADLE_HOME}"
                  //   echo "radhey radhey"
