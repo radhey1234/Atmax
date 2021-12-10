@@ -8,7 +8,7 @@ pipeline {
                 sh '''
                 
             
-                  ssh ec2-user@3.1.100.74 /bin/bash
+                  ssh -o StrictHostKeyChecking=no ec2-user@3.1.100.74 /bin/bash
                    // echo "PATH = ${PATH}"
                   //  echo "GRADLE_HOME = ${GRADLE_HOME}"
                  //   echo "radhey radhey"
