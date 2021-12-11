@@ -1,29 +1,26 @@
             
 pipeline {
     agent any
-    
+
+    environment {
+        AWS_ACCESS_KEY     = credentials('AWS_ACCESS_KEY_ID')
+        AWS_SECRET_KEY = credentials('AWS_SECRET_ACCESS_KEY')
+    }
+
     stages {
-        stage ('Initialize') {
+        stage('Test') {
             steps {
-                sh '''
-                   ssh -i singapurkey.pem ec2-user@13.213.4.95 ls
-                // ssh -o StrictHostKeyChecking=no ec2-user@13.213.4.95 ls
-          //  scp -o StrictHostKeyChecking=no -i singapurkey.pem singapurkey.pem ec2-user@3.0.61.215:/home/ec2-user/
-          //  ssh -i singapurkey.pem ec2-user@3.0.61.215 ls
-                  //  echo "PATH = ${PATH}"
-                 //   echo "GRADLE_HOME = ${GRADLE_HOME}"
-                 //   echo "radhey radhey"
-                '''
+                echo 'Testing..'
+                echo $AWS_SECRET_KEY
+                echo $AWS_ACCESS_KEY
+
             }
         }
-
-        stage ('Build') {
+        stage('Deploy') {
             steps {
-                sh '''
-                echo "radhey"
-                '''
+                echo 'Deploying....'
+                sh "npx serverless --no-aws-s3-accelerate --key $AWS_ACCESS_KEY --secret $AWS_SECRET_KEY"
             }
         }
     }
 }
-
