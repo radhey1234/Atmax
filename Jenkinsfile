@@ -6,7 +6,7 @@ pipeline {
         stage ('Initialize') {
             steps {
                 sh '''
-                 ssh ec2-user@13.213.4.95 
+                 ssh -i ec2-user@13.213.4.95 
           //  scp -o StrictHostKeyChecking=no -i singapurkey.pem singapurkey.pem ec2-user@3.0.61.215:/home/ec2-user/
           //  ssh -i singapurkey.pem ec2-user@3.0.61.215 ls
                   //  echo "PATH = ${PATH}"
