@@ -1,6 +1,6 @@
 
 pipeline {
-    agent {label 'Jenkins-Slave'}
+    agent {label 'Jenkins-slave'}
     
     stages {
         stage ('Initialize') {
